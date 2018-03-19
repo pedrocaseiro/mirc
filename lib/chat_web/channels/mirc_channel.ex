@@ -1,6 +1,8 @@
 defmodule ChatWeb.MircChannel do
   use ChatWeb, :channel
 
+  alias Chat.Chats
+
   def join("mirc:lobby", _payload, socket) do
     # TODO: Add authorization logic
     # if authorized?(payload) do
@@ -20,6 +22,7 @@ defmodule ChatWeb.MircChannel do
   # It is also common to receive messages from the client and
   # broadcast to everyone in the current topic (mirc:lobby).
   def handle_in("shout", payload, socket) do
+    Chats.create_message(payload)
     broadcast socket, "shout", payload
     {:noreply, socket}
   end
