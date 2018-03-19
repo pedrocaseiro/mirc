@@ -1,3 +1,8 @@
+# Behind the scenes
+
+This is just a simple chat, created following the #38 elixir casts tutorial, in order to learn more about channels and how useful they are for real time sending and receiving of messages.
+All you have to do is create a channel, and whoever subscribes to that channel, will receive messages from the broadcasters. The fun part is that receivers and senders can swap their positions, and they can be anything. In this case it's a simple javascript client that's subscribing to the channel and waiting for messages.
+
 # Chat
 
 To start your Phoenix server:
